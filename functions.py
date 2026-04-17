@@ -176,12 +176,12 @@ def validate_word(word):
             f'\n** WARNING: blank space in {word.upper()} deleted.')
         word = word.replace(' ', '')
 
-    word = uni.unidecode(word).upper()
+    # word = uni.unidecode(word).upper()
 
     if not PATTERN.fullmatch(word):
         save_log(
             f'\n** WARNING: only letters in range A-Z or numbers in range 0-9 are allowed. Skipping {word.upper()}.')
-        return False
+        # return False
 
     return word
 
@@ -191,8 +191,10 @@ def create_tex_files(matrix, puzzle_id=None):
     with open(f'{GAME_BOARDS_DIR}current.info', 'w') as f:
         f.write('% !TeX root = ../main.tex\n')
 
-        code = r'\node[title,above=.5em of board] (title) {%s\hfill\#%04s\hfill\today};' % (
-            WSP, puzzle_id)
+        code = r'\node[title,above=.5em of board] (title) {%s\hfill April 24, 2026 (LndF)};' % (
+            WSP
+            #, puzzle_id
+            )
         code += '\n\n'
         code += r'\node[words list,below=of board] (words) {' + ' \\quad '.join(
             sorted(added_words)) + '};'

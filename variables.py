@@ -2,7 +2,7 @@
 LOGFILE = 'LOGFILE'
 WORDS_FILE = 'words.txt'
 GAME_BOARDS_DIR = 'game_boards/'
-WSP = 'Word Search Puzzle'
+WSP = 'IKGA Buddhist Word Search Puzzle'
 
 # Boolean flags
 PDFLATEX = False
@@ -19,7 +19,7 @@ EAST = True
 WEST = True
 DIAGONALS = True
 
-MAXIMAL_NUMBER_OF_TRIES = 30
+MAXIMAL_NUMBER_OF_TRIES = 50
 
 added_words = []
 skipped_words = []
