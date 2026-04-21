@@ -1,0 +1,7 @@
+% !TeX root = ../main.tex
+\node[title,above=.5em of board] (title) {IKGA Buddhist Word Search Puzzle\hfill April 24, 2026 (LndF)};
+
+\node[words list,below=of board] (words) {AMITĀBHA \quad ARYASATYA \quad BHIKṢU \quad BODHISATTVA \quad BUDDHA \quad DAIBUTSU \quad DHARMA \quad DUḤKHA \quad MAITREYA \quad MANTRA \quad MAṆḌALA \quad MOKṢA \quad MĀRGA \quad NIRVĀṆA \quad SAṂSĀRA \quad SAṄGHA \quad STŪPA \quad SŪTRA \quad TANTRA \quad TATHĀGATA \quad ĀGAMA \quad ŚĀKYAMUNI};
+
+\node[words list,below=.5em of words] (total) {Number of words: 22};
+
