@@ -8,18 +8,18 @@ WSP = 'IKGA Buddhist Word Search Puzzle'
 PDFLATEX = False
 # SHOW_ANSWERS = True
 
-# Board dimensions
-ROWS = 20
-COLS = 20
+# Board dimension
+ROWS = 12
+COLS = 12
 
 # Directions allowed for words
 NORTH = True
 SOUTH = True
 EAST = True
 WEST = True
-DIAGONALS = True
+DIAGONALS = False
 
-MAXIMAL_NUMBER_OF_TRIES = 50
+MAXIMAL_NUMBER_OF_TRIES = 800
 
 added_words = []
 skipped_words = []

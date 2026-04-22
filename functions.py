@@ -169,14 +169,15 @@ def pdflatex(puzzle_id):
         print(f'** WARNING: pdflatex option only implemented for Linux systems. Please, run pdflatex manually.')
 
 
-def validate_word(word):
+def validate_word(word, strip_diacritics=True):
     """Validate and normalize a word."""
     if ' ' in word:
         save_log(
             f'\n** WARNING: blank space in {word.upper()} deleted.')
         word = word.replace(' ', '')
 
-    # word = uni.unidecode(word).upper()
+    if strip_diacritics:
+        word = uni.unidecode(word).upper()
 
     if not PATTERN.fullmatch(word):
         save_log(

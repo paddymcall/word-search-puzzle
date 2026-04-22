@@ -209,3 +209,11 @@ marimo/_lsp/
 __marimo__/
 LOGFILE
 *.pdf
+
+# Local
+*~
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+main_no_solutions.tex
