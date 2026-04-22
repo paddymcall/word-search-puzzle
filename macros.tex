@@ -1,6 +1,7 @@
 % !TeX root = main.tex
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+% \usepackage[utf8]{inputenc}
+\usepackage[german,english]{babel}
+\usepackage{hyperref}
 \usepackage{tikz}
 \usetikzlibrary{fit, matrix, positioning, shapes}
 
@@ -27,19 +28,26 @@
   %%
   words list/.style = {black,thick,text width=\textwidth,font=\normalsize,draw,rounded corners=3pt,align=center,inner sep=.5em,outer sep=0pt},
   title/.style = {words list,font=\large,fill=yellow!20},
-  numbers/.style = {gray,text width=2ex,font=\footnotesize\itshape},
+  numbers/.style = {white,text width=2ex,font=\footnotesize\itshape},
   left row numbers/.style = {numbers,anchor=base east,align=right},
   right row numbers/.style = {numbers,anchor=base west,align=left},
   bottom row numbers/.style = {numbers,anchor=north,align=center},
   top row numbers/.style = {numbers,anchor=south,align=center},
+  thanks/.style = {black,thick,text width=\textwidth,font=\footnotesize,align=center,inner sep=.5em,outer sep=0pt},
 }
 
 \pdfinfo{%
   /Title (WSP -- Word Search Puzzle)
   /Creator (Thiago de Melo)
-  /Author (Thiago de Melo)
+  /Author (Thiago de Melo, Patrick McAllister)
 }
 
 
 
+
+
 \makeatother
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "wordsearch"
+%%% End:

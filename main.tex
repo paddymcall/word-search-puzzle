@@ -7,13 +7,13 @@
 
   %% matrix of letters
   \pgfplotstabletypeset[
+    header=false,% input does not contain headers
     font=\sffamily,
     assign column name/.style={%
       /pgfplots/table/column name={\footnotesize\itshape\ttfamily\textcolor{gray}{#1}}
     },
-%    header=true, % not work
-%    every head row/.style={output empty row}, % not work
     string type,
+    every head row/.style={output empty row},% don’t output header rows
     skip coltypes=true,
     typeset cell/.code={%
         % this here is more-or-less the default implementation, but it
@@ -31,6 +31,10 @@
         store number of rows in=\lastrow,
         column sep=2pt,
         row sep=2pt,
+        % fill=red!20,
+        draw=green!20,
+        rounded corners=5pt,
+        very thick,
         cells={nodes={%
           black!80,
           text depth=0ex,
@@ -45,7 +49,7 @@
   ]{\mytable}
 
   %% outer frame
-  \draw (board-1-1.south west) rectangle (board-\lastrow-\lastcol.south east);
+  % \draw (board-1-1.south west) rectangle (board-\lastrow-\lastcol.south east);
 
   %% frame numbers
   \foreach [count=\i from 0] \y in {2,...,\lastrow}{%
@@ -61,6 +65,7 @@
   \input{./game_boards/current.info}
   \input{./game_boards/current.solution} %% <- comment this to hide solutions
 
+  \node[thanks,below=.5em of total] (thanks) {Produced with Thiago de Melo’s \\ \url{https://github.com/tmelorc/word-search-puzzle} (GNU GPL)};
 
 \end{tikzpicture}%
 \end{document}

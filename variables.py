@@ -12,6 +12,9 @@ PDFLATEX = False
 ROWS = 12
 COLS = 12
 
+# Should we add numbers around the table?
+WITH_NUMBERS=False
+
 # Directions allowed for words
 NORTH = True
 SOUTH = True

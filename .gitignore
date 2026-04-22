@@ -217,3 +217,5 @@ LOGFILE
 *.fls
 *.synctex.gz
 main_no_solutions.tex
+auto/
+*.out

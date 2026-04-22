@@ -29,7 +29,10 @@ def save_log(msg, log_file=LOGFILE):
 
 def py2tex(row, col):
     """To adjust indexing from Python (0,0) to LaTeX (2,1)."""
-    return row + 2, col + 1,
+    if WITH_NUMBERS:
+        return row + 2, col + 1
+    else:
+        return row + 1, col + 1
 
 
 def random_letter():
@@ -225,7 +228,9 @@ def create_tex_files(matrix, puzzle_id=None):
             if direction == 'S':
                 word = ''.join(matrix[row:row + word_len, col])
                 code = '\\node[fit=(board-%d-%d)(board-%d-%d),solution vertical] (%s) {};\n' % (
-                    a, b, row + 1 + word_len, col + 1, word)
+                    a, b,
+                    row + 1 + word_len if WITH_NUMBERS else row + word_len,
+                    col + 1, word)
                 code += '\\draw[-latex,thick, solution vertical,fill opacity=1] (%s.north)++(180:.6em) -- ++ (-90:1em);\n' % word
 
             if direction == 'E':
